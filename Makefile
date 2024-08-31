@@ -37,5 +37,11 @@ dbshell:
 psql:
 	docker compose exec -i db psql -U postgres
 
+test:
+	docker compose exec web pytest
+
+test-v:
+	docker compose exec web pytest -v
+
 get-token:
-	bash zeton_django/scripts/get_zeton_token.sh
+	python zeton_django/scripts/get_token.py --u opiekun1 --p opiekun1
